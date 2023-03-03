@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pythonproject13-14"
+version = "0.1.0"
+description = ""
+authors = ["viacheslavzorin <zorin-viacheslav@rambler.ru>"]
+readme = "README.md"
+packages = [{include = "pythonproject13"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
