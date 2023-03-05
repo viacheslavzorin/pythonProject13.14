@@ -1,4 +1,5 @@
 from scr.datastr import Node, Stack
+from scr.custom_queue import Queue
 
 n1 = Node(5, None)
 n2 = Node('a', n1)
@@ -41,3 +42,13 @@ print(stack.top.data)
 # данные удаленного элемента
 print(data)
 # 'data2'
+queue = Queue()
+queue.enqueue('data1')
+queue.enqueue('data2')
+queue.enqueue('data3')
+
+print(queue.head.data)
+print(queue.head.next.data)
+print(queue.tail.data)
+print(queue.tail.next)
+print(queue.tail.next.data)
