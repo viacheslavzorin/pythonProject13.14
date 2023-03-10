@@ -19,7 +19,6 @@ class Stack:
     def pop(self):
         if self.top is None:
             return None
-
         s = self.top
         self.top = self.top.next
         return s.data
