@@ -32,6 +32,7 @@ class NodeStackTestCase(unittest.TestCase):
         queue = Queue()
         self.assertEqual(queue.head, None)
         self.assertEqual(queue.tail, None)
+
     def test_enqueue(self):
         queue = Queue()
         queue.enqueue('data1')
@@ -41,3 +42,13 @@ class NodeStackTestCase(unittest.TestCase):
         self.assertEqual(queue.head.next.data, "data2")
         self.assertEqual(queue.tail.data, "data3")
         self.assertEqual(queue.tail.next, None)
+
+    def test_dequeue(self):
+        queue = Queue()
+        queue.enqueue('data1')
+        queue.enqueue('data2')
+        queue.enqueue('data3')
+        self.assertEqual(queue.dequeue(), 'data1')
+        self.assertEqual(queue.dequeue(), 'data2')
+        self.assertEqual(queue.dequeue(), 'data3')
+        self.assertEqual(queue.dequeue(), None)
