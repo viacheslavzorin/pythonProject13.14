@@ -37,3 +37,5 @@ class LinkedList:
 
         ll_string += ' None'
         print(ll_string)
+
+

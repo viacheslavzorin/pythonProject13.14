@@ -1,6 +1,7 @@
 from scr.datastr import Node, Stack
 import unittest
 from scr.custom_queue import Queue
+from scr.linked_list import LinkedList
 
 
 class NodeStackTestCase(unittest.TestCase):
@@ -52,3 +53,11 @@ class NodeStackTestCase(unittest.TestCase):
         self.assertEqual(queue.dequeue(), 'data2')
         self.assertEqual(queue.dequeue(), 'data3')
         self.assertEqual(queue.dequeue(), None)
+class LinkedListTestCase(unittest.TestCase):
+    def test_print_ll(self):
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1})
+        ll.insert_at_and({'id': 2})
+        ll.insert_at_and({'id': 3})
+        ll.insert_beginning({'id': 0})
+        self.assertEqual(ll.print_ll(), print("{'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None"))
