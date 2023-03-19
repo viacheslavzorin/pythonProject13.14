@@ -17,7 +17,7 @@ class LinkedList:
             new_node.next_node = self.head
             self.head = new_node
 
-    def insert_at_and(self, data):
+    def insert_at_end(self, data):
         new_node = Node(data)
         if self.tail is None:
             self.head = new_node
@@ -38,4 +38,20 @@ class LinkedList:
         ll_string += ' None'
         print(ll_string)
 
-
+    def to_list(self):
+        list_l = []
+        node = self.head
+        while node:
+            list_l.append(node.data)
+            node = node.next_node
+        return list_l
+    def get_data_by_id(self, id):
+        node = self.head
+        try:
+            while node:
+                if node.data['id'] == id:
+                    return node.data
+                node = node.next_node
+            return None
+        except TypeError:
+            print("Данные не являются словарём или в словаре нет id")
